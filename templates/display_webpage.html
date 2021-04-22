@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpages details</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'mdb.css' %}">
+    <style>
+        #abc
+        {
+            border-start-end-radius: "5px";
+        
+        }
+    </style>
+   
+</head>
+<body class="bg-dark">
+    
+    <center id="a">
+        <h1 class="display-5 text-white" >Displaying the info the Webpages model</h1>
+        
+        {% if webpages %}
+           <table id="abc" class=" br-2 pr-3 m-5 ml-5 text-white "  border="2px">
+               <tr class="text-xl-center"><th>topic_name</th>
+                <th>name</th>
+                <th >url</th>
+                </tr>
+            {% for i in webpages %}
+                 <tr><td>{{ i.topic_name }}</td>
+                 <td>{{ i.name }}</td>
+                 <td class="ml-2">{{ i.url}}</td></tr>
+                {% endfor %}
+           </table>
+        {% else %}
+          <h1>no data available</h1>  
+        {% endif %}    
+    </center>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/mdb.js' %}"></script>   
+</body>
+</html>
